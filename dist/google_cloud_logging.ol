@@ -33,16 +33,23 @@ interface GoogleCloudLoggingInterface {
 
 }
 
+service GoogleCloudLogging{
 
-outputPort GoogleCloudLogging {
+inputPort GoogleCloudLogging {
+  location:"local"
   Interfaces: GoogleCloudLoggingInterface
 }
 
 
-embedded {
-  Java:
-    "joliex.google.GoogleCloudLoggingService" in GoogleCloudLogging
+foreign java {
+  class: "joliex.google.GoogleCloudLoggingService" 
+  }
+
 }
+
+
+
+
 
 
 
