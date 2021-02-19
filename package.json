@@ -1,0 +1,25 @@
+{
+  "name": "jolie-googlecloud-logging-sevice",
+  "version": "1.0.0",
+  "description": "package for google ",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm install --save-dev run-script-os",
+    "postinstall": "run-script-os",
+    "postinstall:win32": "mvn install && cd .. && xcopy jolie-googlecloud-logging\\dist  ..\\packages\\jolie-googlecloud-logging\\ /s /e /h /y",
+    "postinstall:linux": "mvn install && cd .. && cp ./jolie-googlecloud-logging/dist  ../packages/jolie-googlecloud-logging/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolie-storm/JolieGoogleCloudLogging.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jolie-storm/JolieGoogleCloudLogging/issues"
+  },
+  "homepage": "https://github.com/jolie-storm/JolieGoogleCloudLogging#readme",
+  "devDependencies": {
+    "run-script-os": "^1.1.5"
+  }
+}
